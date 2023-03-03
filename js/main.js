@@ -92,7 +92,7 @@ goods.addEventListener('click', (e) => {
                 for (let j = 0; j < elementsOfItemGoods.length; j++) {
                     if (elementsOfItemGoods[j].className != undefined) {
                         elementsOfItemGoods[j].classList.add('active');
-                    }
+                    };
                 };
 
         } else {
@@ -101,7 +101,7 @@ goods.addEventListener('click', (e) => {
                 for (let j = 0; j < elementsOfItemGoods.length; j++) {
                     if (elementsOfItemGoods[j].className != undefined) {
                         elementsOfItemGoods[j].classList.remove('active');
-                    }
+                    };
                 };
             itemsInfo[i].classList.remove('active');
         };
@@ -223,7 +223,19 @@ ordering.addEventListener('submit', (e) => {
             quantityAddedProduct.className = 'quantity';
             quantityAddedProduct.textContent = 'Quantity: ' + quantitySelectedProduct.value;
             selectedProductCopy.querySelector('p').after(quantityAddedProduct);
+            ordering.classList.remove('active');
             infoPart.classList.remove('active');
+            for (let i = 0; i < itemsGoods.length; i++) {
+                if (itemsGoods[i].classList[1] === 'active') {
+                    itemsGoods[i].classList.remove('active');
+                    elementsOfItemGoods = itemsGoods[i].childNodes;
+                        for (let j = 0; j < elementsOfItemGoods.length; j++) {
+                            if (elementsOfItemGoods[j].className != undefined) {
+                                elementsOfItemGoods[j].classList.remove('active');
+                            };
+                        };
+                    };
+                };
             if (leftPart.contains(document.querySelector('.empty-el'))) {
                 document.querySelector('.empty-el').remove();
             };
@@ -231,7 +243,7 @@ ordering.addEventListener('submit', (e) => {
 
             let elementsInBasket = basket.innerHTML;
             localStorage.setItem(`basket`, elementsInBasket);
-            
+
         };
 });
 
