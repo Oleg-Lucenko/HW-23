@@ -1,0 +1,494 @@
+body {
+    font: 14px/18px arial;
+    color: #000;
+    background-color: #fff;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    background-color: rgb(1, 190, 1);
+}
+
+.left-part-container {
+    min-height: 100vh;
+    width: 16%;
+    display: inline-block;
+    font-size: 18px;
+    background-color: rgba(13, 225, 13, 0.781);
+    border: 2px solid rgb(1, 190, 1);
+    border-radius: 7px;
+    text-align: center;
+}
+
+.my-orders-btn {
+    cursor: pointer;
+    width: 100%;
+    color: #fff;
+    padding: 25px 0 25px 0;
+    background-color: rgb(14 105 0);
+    border: none;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.my-orders-btn:hover {
+    background-color: rgb(18, 129, 1);
+}
+
+.my-orders-btn.categories-btn {
+    position: relative;
+    background-color: #003e8a;
+}
+
+.my-orders-btn.categories-btn:hover {
+    background-color: #062e60;
+}
+
+.my-orders-btn.categories-btn::before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    border: 2px solid #00cd32;
+    border-width: 0 0 2px 2px;
+    rotate: 45deg;
+    left: 61px;
+    top: 29px;
+}
+
+.goods,
+.info {
+    width: 42%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.categories-list li {
+    border-bottom: 2px solid rgb(78, 182, 78);
+    margin: 0;
+    padding: 20px 0;
+}
+
+.categories-list li:hover {
+    color: rgb(0, 64, 255);
+    cursor: pointer;
+    background-color: rgb(22, 249, 22);
+}
+
+.categories-list li.active {
+    color: rgb(0, 64, 255);
+    cursor: pointer;
+    background-color: rgb(22, 249, 22);
+}
+
+.goods__watches-item img,
+.goods__wallets-item img,
+.info__watches-item img,
+.info__wallets-item img{
+    width: 100px;
+    height: 150px;
+    border-radius: 4px;
+}
+
+.goods__glasses-item img, 
+.info__glasses-item img {
+    width: 150px;
+    max-height: 100px;
+    border-radius: 4px;
+}
+
+.goods {
+    display: none;
+}
+
+.goods.active {
+    display: block;
+    background-color: rgb(1 142 1);
+}
+
+.goods h1,
+.prompt {
+    display: block;
+    text-align: center;
+}
+
+.goods ul {
+    display: none;
+    width: 100%;
+}
+
+.goods ul.active {
+    display: inline-block;
+}
+
+.goods li {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.7em;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 2px solid rgba(117, 189, 218, 0);
+    padding-bottom: 40px;
+}
+
+.goods li:hover {
+    border: 2px solid rgb(11, 11, 180);
+    border-radius: 4px;
+    color: #00ff4f;
+    text-shadow: -8px 12px 6px rgb(1, 1, 16);
+}
+
+.goods li.active {
+    border: 2px solid rgb(11, 11, 180);
+    border-radius: 4px;
+    color: #00ff4f;
+    text-shadow: -8px 12px 6px rgb(1, 1, 16);
+}
+
+.goods li h2 {
+    margin-bottom: 0;
+}
+
+.goods li:hover img,
+.goods li:hover h2 {
+    margin-left: 12px;
+    transition: 0.5s;
+}
+
+.goods li img.active,
+.goods li h2.active {
+    margin-left: 12px;
+    transition: 0.5s;
+}
+
+.price {
+    font-size: 20px;
+    align-self: flex-end;
+    margin: 0 12px 0 0;
+}
+
+.price.active {
+    color:#00ff4f;
+    margin: 0;
+    text-shadow: -8px 12px 6px rgb(1, 1, 16);
+    transition: 0.5s;
+}
+
+.goods li:hover .price {
+    color:#00ff4f;
+    margin: 0;
+    text-shadow: -8px 12px 6px rgb(1, 1, 16);
+    transition: 0.5s;
+}
+
+.info {
+    display: none;
+    background-color: rgba(150, 255, 150, 0.781);
+}
+
+.info.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info li {
+    display: none;
+    line-height: 1.7em;
+    margin: 0;
+    padding: 0 20px 0 20px;
+    margin-bottom: 30px;
+    list-style: none;
+}
+
+.info li.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.btn-buy {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: rgb(76, 76, 167);
+    border-color: rgb(83, 83, 255);
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 6px 30px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.btn-buy:hover {
+    box-shadow: 0px 0px 16px 2px rgb(62 82 255);
+    transition: 0.3s;
+}
+
+.ordering {
+    display: none;
+    margin-left: 20px;
+    align-self: flex-start;
+}
+
+.ordering.active {
+    display: block;
+}
+
+.ordering input {
+    width: 200px;
+}
+
+.ordering input,
+.ordering select,
+.ordering textarea {
+    display: block;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.ordering label {
+    display: block;
+    margin-top: 25px;
+}
+
+
+.ordering input:focus,
+.ordering textarea:focus {
+    box-shadow: 0 0 2px 2px rgb(17, 35, 201);
+}
+
+.ordering input.error,
+.ordering select.error {
+    box-shadow: 0 0 3px 3px red;
+}
+
+.ordering fieldset input.error {
+    box-shadow: 0 0 5px 5px red;
+    border-radius: 10px;
+}
+
+
+.ordering fieldset {
+    border: none;
+    padding: 0;
+    margin: 30px 0 0 0;
+}
+
+.ordering fieldset label,
+.ordering fieldset input {
+    display: inline-block;
+    width: auto;
+    margin-top: 0;
+}
+
+.ordering fieldset label[for="cash"] {
+    margin: 0 30px 0 0;
+}
+
+.ordering fieldset legend {
+    margin: 0;
+}
+
+.ordering fieldset input {
+    margin: 5px 0 0 0;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%
+}
+
+.ordering fieldset input:checked {
+    background-color: #0091ff;
+    box-shadow: none;
+}
+
+.ordering fieldset input:focus {
+    box-shadow: none;
+}
+
+
+.ordering .valid-purchase-btn {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: rgb(76, 76, 167);
+    border-color: rgb(83, 83, 255);
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 10px 6px;
+    color: #fff;
+    margin: 30px 0 30px 0;
+}
+
+.ordering .valid-purchase-btn:hover {
+    box-shadow: 0px 0px 16px 2px rgb(62 82 255);
+    transition: 0.3s;
+}
+
+.ordering p {
+    margin: 5px 0 0 0;
+    color: rgba(255, 0, 0, 0.942);
+}
+
+.purchased {
+    display: none;
+    width: 720px;
+    position: absolute;
+    list-style: none;
+    background: #e3e3ee;
+    left: 22%;
+}
+
+.purchased.active {
+    display: block;
+}
+
+.purchased li {
+    margin: 15px;
+}
+
+
+.purchased input,
+.purchased select {
+    background: transparent;
+    appearance: none;
+    display: inline-block;
+    color: #000;
+}
+
+.purchased fieldset input[type='radio'],
+.purchased fieldset label {
+    display: none;
+}
+
+.purchased fieldset input[type='radio']:checked+label {
+    display: inline-block;
+}
+
+.purchased textarea {
+    display: none;
+}
+
+.purchased label[for="comment-to-order"] {
+    display: none;
+}
+
+.btn-purchased {
+display: block;
+font-size: 16px;
+line-height: 20px;
+background-color: rgb(76, 76, 167);
+border-color: rgb(83, 83, 255);
+cursor: pointer;
+border-radius: 4px;
+padding: 10px 20px;
+color: #fff;
+margin: 25px 0 25px 20px;
+}
+
+.btn-purchased:hover {
+    box-shadow: 0px 0px 16px 2px rgb(62 82 255);
+    transition: 0.3s;
+}
+
+.categories.d-none {
+    display: none;
+}
+
+.basket {
+    display: none;
+}
+
+.basket.active {
+    display: block;
+    list-style: none;
+}
+
+
+.basket li {
+    position: relative;
+    cursor: pointer;
+    margin: 20px 0 0 0;
+    border-bottom: 2px solid rgb(0, 141, 0);
+    padding: 0 0 15px 0;
+}
+
+.basket img {
+    width: 30px;
+    height: 50px;
+}
+
+.basket .info__glasses-item img {
+    width: 50px;
+    height: 30px;
+}
+
+.basket h2 {
+    font-size: 12px;
+}
+
+.basket p {
+    display: none;
+}
+
+.basket .price {
+    color: #1911dc;
+}
+
+.basket .date {
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    font-size: 12px;
+    margin: 0;
+}
+
+.basket button {
+    font-size: 12px;
+    position: absolute;
+    right: 6px;
+    top: 0;
+    background-color: rgb(180 179 176);
+    color: #e51600;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.basket button:hover {
+    color: rgb(126, 0, 0);
+}
+
+.basket .quantity {
+    display: none;
+}
+
+.basket li.with-description p {
+    display: block;
+    font-size: 10px;
+}
+
+.basket li.with-description .quantity {
+    display: block;
+    font-size: 13px;
+}
+
+.left-part-container .empty-el {
+    color: #107a10;
+    margin: 0;
+    padding: 66px 0px;
+}
+
